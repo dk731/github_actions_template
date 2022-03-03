@@ -9,9 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+  
     strategy:
-      node-version: 17.x
+      matrix:
+        node_version: ['17.x']
 
     steps:
       - uses: actions/checkout@v2
@@ -24,5 +25,5 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Build:
+      - name: Build
         run: npm run build:prod
