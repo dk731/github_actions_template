@@ -1,4 +1,5 @@
 const path = require("path");
+var ZipPlugin = require("zip-webpack-plugin");
 
 module.exports = {
   entry: "./index.js",
@@ -11,4 +12,10 @@ module.exports = {
   resolve: {
     extensions: [".js"],
   },
+  plugins: [
+    new ZipPlugin({
+      filename: "artifact.zip",
+      extension: "zip",
+    }),
+  ],
 };
